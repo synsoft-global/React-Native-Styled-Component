@@ -21,17 +21,42 @@ const StyledContainer = styled.View`
 const StyledRow = styled.View`
    display: flex;
    flex-direction: row;
-   padding: 5px;
+   gap: 12px;
+   margin: 8px;
+   padding: 8px;
+   background: ${props => props.theme.cardBg};
+   border-radius: 8px;
+`
+const StyledContent = styled.View`
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   margin-right: 20px
 `
 
 const StyledRowImage = styled.Image`
    height: 100px;
    width: 100px;
+   object-fit: cover;
+   border-radius: 8px;
 `
-const StyledText = styled.Text`
+const StyledTextTitle = styled.Text`
   font-size: 18px;
   color:  ${props => props.theme.text};
+  font-weight: 600;
+  margin-bottom: 4px;
+`;
+
+const StyledTextDesc = styled.Text`
+  font-size: 14px;
+  color:  ${props => props.theme.text};
   font-weight: 400;
+  max-width: 85%;
+`;
+const LinkText = styled.Text`
+  font-size: 16px;
+  color:  ${props => props.theme.text};
+  font-weight: 500;
 `;
 
 // Main component for displaying a list of items
@@ -68,21 +93,21 @@ const ListView = () => {
     return (
       <StyledRow>
         <StyledRowImage source={{ uri: rowData?.item?.thumbnail }} />
-        <View>
-          <StyledText>
-            {rowData?.item?.title}
-          </StyledText>
-          <StyledText>
-            {rowData?.item?.description}
-          </StyledText>
+        <StyledContent>
+          <View>
+            <StyledTextTitle>
+              {rowData?.item?.title}
+            </StyledTextTitle>
 
-          <TouchableOpacity
-            onPress={() => {
-              navigation.navigate('Details', { data: rowData?.item });
-            }}>
-            <Text>More</Text>
-          </TouchableOpacity>
-        </View>
+            <StyledTextDesc numberOfLines={3} ellipsizeMode="tail">
+              {rowData?.item?.description}
+            </StyledTextDesc>
+            </View>
+
+            <TouchableOpacity onPress={() => { navigation.navigate('Details', { data: rowData?.item });}}>
+              <LinkText>More</LinkText>
+            </TouchableOpacity>
+        </StyledContent>
       </StyledRow>
     )
   }
