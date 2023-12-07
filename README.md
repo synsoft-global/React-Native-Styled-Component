@@ -43,10 +43,11 @@ The project structure follows the Redux Toolkit best practices. Here's a brief o
 
 - src
    - components: Reusable UI components.
-   - screens: Individual screens of the app.
+   - pages: Individual screens of the app.
    - redux: 
       slices: Redux slices for managing state.
       store.js: Redux store configuration.
+   - services: Api calling code   
 
 ### Usage
 Feel free to explore the codebase, modify components, and add new features. Below are specific details on styling and state management.
