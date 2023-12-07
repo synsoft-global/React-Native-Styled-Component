@@ -1,79 +1,61 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# React Native Project with Styled-Components, Redux Toolkit, and Light/Dark Mode
 
-# Getting Started
+Welcome to our React Native project! This app is built using styled-components for styling, Redux Toolkit for state management, and supports both light and dark modes for a personalized user experience.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Table of Contents
 
-## Step 1: Start the Metro Server
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Folder Structure](#folder-structure)
+- [Usage](#usage)
+- [Styling with Styled-Components](#styling-with-styled-components)
+- [State Management with Redux Toolkit](#state-management-with-redux-toolkit)
+- [Light and Dark Mode](#light-and-dark-mode)
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## Features
 
-To start Metro, run the following command from the _root_ of your React Native project:
+- Styled-components for a clean and maintainable styling approach.
+- Redux Toolkit for efficient state management.
+- Light and dark mode support for a personalized user experience.
 
-```bash
-# using npm
-npm start
+## Getting Started
 
-# OR using Yarn
-yarn start
-```
+### Prerequisites
 
-## Step 2: Start your Application
+Before you begin, ensure you have the following installed:
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+- Node.js and npm (Node Package Manager)
+- React Native CLI
+- Xcode (for iOS development) or Android Studio (for Android development)
 
-### For Android
+### Installation
 
-```bash
-# using npm
-npm run android
+1. Clone the repository:
 
-# OR using Yarn
-yarn android
-```
+   ```bash
+   git clone https://github.com/synsoft-global/React-Native-Styled-Component.git
 
-### For iOS
 
-```bash
-# using npm
-npm run ios
+### Folder Structure
+The project structure follows the Redux Toolkit best practices. Here's a brief overview:
 
-# OR using Yarn
-yarn ios
-```
+src ->
+   components: Reusable UI components.
+   screens: Individual screens of the app.
+   redux -> 
+      slices: Redux slices for managing state.
+      store.js: Redux store configuration.
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+### Usage
+Feel free to explore the codebase, modify components, and add new features. Below are specific details on styling and state management.
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+### Styling with Styled-Components
+We use styled-components for styling. Styles are defined directly in JavaScript files, making it easy to manage and reuse styles. For more information, refer to the styled-components documentation.
 
-## Step 3: Modifying your App
+### State Management with Redux Toolkit
+Redux Toolkit is employed for state management. Slices in the src/redux/slices folder define the reducers and actions. The global store configuration is in src/redux/store.js. Refer to the Redux Toolkit documentation for in-depth information.
 
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+### Light and Dark Mode
+The app supports both light and dark modes for a personalized user experience. To toggle between modes, check the implementation in the components and styles. The mode can be managed globally through Redux state or using React Context.
