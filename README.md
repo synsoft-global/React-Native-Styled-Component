@@ -41,10 +41,10 @@ Before you begin, ensure you have the following installed:
 ### Folder Structure
 The project structure follows the Redux Toolkit best practices. Here's a brief overview:
 
-src ->
-   components: Reusable UI components.
-   screens: Individual screens of the app.
-   redux -> 
+-src
+   -components: Reusable UI components.
+   -screens: Individual screens of the app.
+   -redux: 
       slices: Redux slices for managing state.
       store.js: Redux store configuration.
 
