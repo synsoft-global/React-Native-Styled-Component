@@ -1,6 +1,6 @@
 
 import React from 'react';
-import {useRoute} from '@react-navigation/native';
+import { useRoute } from '@react-navigation/native';
 import styled from 'styled-components/native';
 import Carousel from 'react-native-snap-carousel';
 import { Dimensions } from 'react-native';
@@ -11,11 +11,11 @@ const StyledContainer = styled.View`
 `;
 
 const StyledCarouselBg = styled.View`
-      margin: 10px;
+    margin: 10px;
 `;
 
 const StyledInfoBg = styled.View`
-  flex: 2;
+    flex: 2;
 `;
 
 const StyledText = styled.Text`
@@ -23,7 +23,6 @@ const StyledText = styled.Text`
   color:  ${props => props.theme.text};
   font-weight: 400;
 `;
-
 
 const StyledCarouselImage = styled.Image`
    height: 200px;
@@ -33,43 +32,38 @@ const StyledCarouselImage = styled.Image`
 `
 
 const ListDetail = () => {
-     const { width: screenWidth } = Dimensions.get('window')
+  const { width: screenWidth } = Dimensions.get('window')
+  const route = useRoute();
+  const { data }: any = route.params;
 
-    const route = useRoute();
-    const {data}: any = route.params;
-
-    console.log(data);
-
-      // Function to render images in carouse
+  // Function to render images in carouse
   const renderItem = (rowData: any) => {
-    console.log(rowData);
-    
     return (
-      <StyledCarouselImage source={{ uri: rowData?.item}} /> 
+      <StyledCarouselImage source={{ uri: rowData?.item }} />
     )
   }
-    
-    return (
+
+  return (
     <StyledContainer>
       <StyledCarouselBg>
         <Carousel
-                data={data?.images}
-                renderItem={renderItem}
-                sliderWidth={screenWidth}
-                sliderHeight={200}
-                itemWidth={screenWidth - 60}
-                layout={'stack'} 
-                layoutCardOffset={`18`}
-              />
+          data={data?.images}
+          renderItem={renderItem}
+          sliderWidth={screenWidth}
+          sliderHeight={200}
+          itemWidth={screenWidth - 60}
+          layout={'stack'}
+          layoutCardOffset={`18`}
+        />
       </StyledCarouselBg>
-       
-            <StyledInfoBg>
-                 <StyledText> {data?.title} </StyledText>
-                 <StyledText> {data?.description} </StyledText>
-            </StyledInfoBg>
-       
+
+      <StyledInfoBg>
+        <StyledText> {data?.title} </StyledText>
+        <StyledText> {data?.description} </StyledText>
+      </StyledInfoBg>
+
     </StyledContainer>
-    )
+  )
 
 }
 
